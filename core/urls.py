@@ -39,8 +39,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
-    path('',include("todo.urls"),name="index"),
-    path('api/',include("api.urls"),name="api"),
+    path('tasks/',include("todo.urls"),name="tasks"),
+    path('api/',include("todo.api.urls"),name="api"),
     path('swagger/api.json', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
